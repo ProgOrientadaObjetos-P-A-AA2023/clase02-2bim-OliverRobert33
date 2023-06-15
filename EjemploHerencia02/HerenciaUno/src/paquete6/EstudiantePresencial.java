@@ -51,4 +51,24 @@ public class EstudiantePresencial extends Estudiante {
         return matriculaPresencial;
     }
 
+    public String toString() {
+        String cadena = String.format(""
+                + "Nombre: %s\n"
+                + "Apellido: %s\n"
+                + "Identificación: %s\n"
+                + "Edad: %s\n"
+                + "NUmero Creditos: %d\n"
+                + "CostoCreditos: %.2f\n"
+                + "Valor Matricula: %.2f\n"
+                + "--------------------------------\n",
+                
+                nombresEstudiante,
+                apellidosEstudiante,
+                identificacionEstudiante,
+                edadEstudiante,
+                obtenerNumeroCreditos(),
+                obtenerCostoCredito(),
+                obtenerMatriculaPresencial());
+        return cadena;
+    }
 }

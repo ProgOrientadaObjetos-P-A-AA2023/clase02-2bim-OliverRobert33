@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package paquete6;
 
 import java.util.Locale;
 import java.util.Scanner;
 
-/**
- *
- * @author reroes
- */
 public class Ejecutor2 {
 
     public static void main(String[] args) {
@@ -23,6 +14,8 @@ public class Ejecutor2 {
 
         // Trabajo clases 15 junio 2023
         Scanner entrada = new Scanner(System.in);
+        entrada.useLocale(Locale.US);
+
         boolean bandera = true;
         String cadena = "";
 
@@ -39,39 +32,22 @@ public class Ejecutor2 {
             int creditos = entrada.nextInt();
             System.out.println("Ingrese costo de créditos");
             double costo = entrada.nextInt();
-            System.out.println("-------------------------");
+            System.out.println("\n");
 
             EstudiantePresencial presencial = new EstudiantePresencial(n, ap,
                     ced, edad, costo, creditos);
             presencial.calcularMatriculaPresencial();
-
             entrada.nextLine();
-            cadena = String.format("%s"
-                    + "Nombre: %s\n"
-                    + "Apellido: %s\n"
-                    + "Identificación: %s\n"
-                    + "Edad: %s\n"
-                    + "NUmero Creditos: %d\n"
-                    + "CostoCreditos: %.2f\n"
-                    + "Valor Matricula: %.2f\n"
-                    + "--------------------------------",
-                    cadena,
-                    presencial.nombresEstudiante,
-                    presencial.apellidosEstudiante,
-                    presencial.identificacionEstudiante,
-                    presencial.edadEstudiante,
-                    presencial.obtenerNumeroCreditos(),
-                    presencial.obtenerCostoCredito(),
-                    presencial.obtenerMatriculaPresencial());
-            
+            cadena = String.format("%s\n%s", cadena,presencial.toString());
             System.out.println("Desea salir, ingrese SI");
             String opcion = entrada.nextLine();
             if (opcion.equals("SI")) {
                 bandera = false;
-
             }
-        }
-        System.out.printf("%s\n", cadena);
 
+            
+        }
+
+        System.out.printf("%s\n", cadena);
     }
 }
