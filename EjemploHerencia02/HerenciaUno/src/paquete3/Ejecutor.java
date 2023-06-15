@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package paquete3;
 
-/**
- *
- * @author reroes
- */
 public class Ejecutor {
     public static void main(String[] args) {
         
@@ -23,7 +15,11 @@ public class Ejecutor {
                 apellido, identificacion, edad);
         
         System.out.println(estDistancia);
-                
+        
+        
+        EstudiantePresencial estudiantePresencial = new EstudiantePresencial(
+                "OLiver", "Saraguro", "1010101", 18);
+        System.out.println(estudiantePresencial);
         
     }
 }
